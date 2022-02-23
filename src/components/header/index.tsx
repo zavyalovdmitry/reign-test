@@ -1,16 +1,21 @@
 /* eslint-disable react/function-component-definition */
-import React, { FC } from 'react';
+import React from 'react';
 import { Container, Title } from './styles/header';
 
-interface HeaderComposition {
-  Title: FC;
+interface IHeaderTitle extends React.HTMLAttributes<HTMLHeadingElement> {
+  children: React.ReactNode;
 }
 
-const Header: FC & HeaderComposition = ({ children, ...restProps }) => (
+interface IHeader extends React.HTMLAttributes<HTMLDivElement> {
+  Select?: IHeaderTitle;
+  children: React.ReactNode;
+}
+
+const Header = ({ children, ...restProps }: IHeader) => (
   <Container {...restProps}>{children}</Container>
 );
 
-const HeaderTitle: FC = ({ children, ...restProps }) => (
+const HeaderTitle = ({ children, ...restProps }: IHeaderTitle) => (
   <Title {...restProps}>{children}</Title>
 );
 

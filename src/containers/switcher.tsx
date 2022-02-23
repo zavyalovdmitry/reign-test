@@ -4,7 +4,7 @@ import { Switcher } from '../components';
 
 const SwitcherContainer: FC = () => (
   <Switcher>
-    <Switcher.Button>All</Switcher.Button>
+    <Switcher.Button className="active">All</Switcher.Button>
     <Switcher.Button>My faves</Switcher.Button>
   </Switcher>
 );
