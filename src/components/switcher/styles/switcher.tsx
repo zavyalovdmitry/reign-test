@@ -25,9 +25,11 @@ export const Button = styled.p`
   text-align: center;
   color: #1797ff;
   padding-top: 2px;
+  cursor: pointer;
 
   &.active {
     border: solid 1px #1797ff;
+    cursor: default;
   }
 
   &:first-of-type {

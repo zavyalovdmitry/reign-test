@@ -27,6 +27,7 @@ export const Item = styled.div`
   background-color: #fff;
 
   position: relative;
+  cursor: pointer;
 
   & img {
     position: absolute;

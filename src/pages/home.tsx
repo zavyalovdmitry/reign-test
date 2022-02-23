@@ -5,6 +5,7 @@ import {
   SwitcherContainer,
   FilterContainer,
   NewsContainer,
+  PaginationContainer,
 } from '../containers';
 
 const Home: FC = () => (
@@ -13,6 +14,7 @@ const Home: FC = () => (
     <SwitcherContainer />
     <FilterContainer />
     <NewsContainer />
+    <PaginationContainer />
   </>
 );
 

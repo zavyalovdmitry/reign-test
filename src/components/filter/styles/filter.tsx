@@ -11,6 +11,7 @@ export const Select = styled.select`
   opacity: 0.85;
   // position: relative;
   padding: 5px 12px 5px 12px;
+  cursor: pointer;
 
   width: 240px;
   height: 32px;
