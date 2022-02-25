@@ -8,12 +8,14 @@ const data = ['Angular', 'Reactjs', 'Vuejs'];
 const FilterContainer: FC = () => {
   const context = useContext(Context);
 
-  const clickHandler = (e: React.ChangeEvent<EventTarget>) => {
-    if (e !== null && e.target instanceof HTMLInputElement) {
-      const { value } = e.target;
+  const clickHandler = (e: React.FormEvent<HTMLSelectElement>) => {
+    if (e !== null && e.currentTarget instanceof HTMLElement) {
+      const { value } = e.currentTarget;
 
       context?.setContext({ ...context, filter: value });
+      console.log(context);
     }
+    // console.log(context);
   };
 
   return (

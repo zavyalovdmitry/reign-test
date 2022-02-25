@@ -14,7 +14,6 @@ const PaginationContainer: FC = () => {
 
       context?.setContext({ ...context, page: value! });
     }
-    // console.log(context);
   };
 
   return (

@@ -8,7 +8,7 @@ import { IContext, Context } from './context';
 const App: FC = () => {
   const initialContext: IContext = {
     switch: 'All',
-    filter: 'Angular',
+    filter: '',
     page: '1',
     setContext: (): void => {
       throw new Error('error');

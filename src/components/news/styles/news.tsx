@@ -8,7 +8,7 @@ export const Container = styled.div`
   grid-template-rows: auto auto auto auto;
   grid-row-gap: 30px;
   grid-column-gap: 40px;
-  grid-auto-flow: column;
+  // grid-auto-flow: column;
 
   margin-top: 38px;
 `;

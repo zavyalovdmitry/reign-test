@@ -2,6 +2,7 @@ import styled from 'styled-components/macro';
 
 export const Container = styled.div`
   margin-top: 96px;
+  margin-bottom: 96px;
   width: 1140px;
   box-sizing: border-box;
   display: flex;
