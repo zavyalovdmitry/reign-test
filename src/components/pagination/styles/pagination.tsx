@@ -6,13 +6,10 @@ export const Container = styled.div`
   box-sizing: border-box;
   display: flex;
   justify-content: center;
-  // margin-top: 70px;
 `;
 
 export const Button = styled.p`
-  // width: 32px;
-  // height: 32px;
-  margin: 0 8px;
+  margin-left: 8px;
   padding: 6px 12px 4px;
   border-radius: 6px;
   border: solid 1px #d9d9d9;
@@ -30,15 +27,24 @@ export const Button = styled.p`
   letter-spacing: normal;
   text-align: center;
   color: rgba(0, 0, 0, 0.65);
+  transition: 0.5s;
+
+  &:firts-of-type {
+    margin-left: 0;
+  }
 
   &.active {
-    // width: 32px;
-    // height: 32px;
-    // margin: 0 8px;
-    // padding: 6px 12px 4px;
-    // border-radius: 6px;
     background-color: #1890ff;
     cursor: default;
     color: #fff;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &:hover {
+    opacity: 0.6;
+    transition: 0.5s;
   }
 `;

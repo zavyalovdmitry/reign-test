@@ -28,6 +28,7 @@ export const Item = styled.div`
 
   position: relative;
   cursor: pointer;
+  transition: 0.5s;
 
   & img {
     position: absolute;
@@ -38,9 +39,20 @@ export const Item = styled.div`
     }
 
     &:last-of-type {
-      top: 35px;
+      top: 33px;
       right: 20px;
+
+      &:hover {
+        & svg {
+          display: none;
+        }
+      }
     }
+  }
+
+  &:hover {
+    opacity: 0.6;
+    transition: 0.5s;
   }
 `;
 

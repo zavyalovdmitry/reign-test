@@ -23,13 +23,14 @@ export const Button = styled.p`
   line-height: 1.75;
   letter-spacing: normal;
   text-align: center;
-  color: #1797ff;
+  color: #606060;
   padding-top: 2px;
   cursor: pointer;
 
   &.active {
     border: solid 1px #1797ff;
     cursor: default;
+    color: #1797ff;
   }
 
   &:first-of-type {
