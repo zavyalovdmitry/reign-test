@@ -9,14 +9,18 @@ import { API } from '../lib';
 const NewsContainer: FC = () => {
   const [news, setNews] = useState<any[]>([]);
   const context = useContext(Context);
-
+  // const [filterValue, setFilterValue] = useState<undefined | string>(undefined);
+  
   const fetchNews = () => {
+    // console.log(filterValue, '-', context?.filter);
+    // if (filterValue) {
     fetch(
       `${API}query=${context?.filter}&page=${context?.page}`
     )
       .then((response) => response.json())
       .then((responseData) => {
         const newsData = responseData;
+        console.log(newsData);
         // dispatch(fetchVehiclesSuccess(vehicles));
         // console.log(newsData.hits);
         setNews(newsData.hits);
@@ -24,12 +28,25 @@ const NewsContainer: FC = () => {
       .catch((error) => {
         console.log(error.message);
       });
+    
+    // }
   };
 
+  // useEffect(() => {
+  //   if (context?.filter !== undefined) {
+  //     setFilterValue(context?.filter);
+  //   }
+  //   console.log(`/${filterValue}/ - /${context?.filter}/`);
+  // }, [context?.filter])
+
   useEffect(() => {
-    console.log(context?.filter);
+    // console.log(context?.filter);
+
+    // setFilterValue(context?.filter);
+    // if (context?.filter) {
     setNews([]);
-    fetchNews();
+    fetchNews(); 
+    // }
   }, [context?.filter, context?.page]);
 
   return news.length > 0 ? (

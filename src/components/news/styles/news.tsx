@@ -19,6 +19,7 @@ export const Item = styled.div`
   border-radius: 6px;
   height: 90px;
   max-width: 550px;
+  width: 100%;
   background: linear-gradient(90deg, white 482px, rgba(96, 96, 96, 0.06) 0);
 
   padding: 0 0 0 26px;
