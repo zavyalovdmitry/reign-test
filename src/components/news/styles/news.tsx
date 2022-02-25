@@ -8,9 +8,49 @@ export const Container = styled.div`
   grid-template-rows: auto auto auto auto;
   grid-row-gap: 30px;
   grid-column-gap: 40px;
-  // grid-auto-flow: column;
-
   margin-top: 38px;
+`;
+
+export const Like = styled.div`
+  background-color: rgba(96, 96, 96, 0.06);
+  position: relative;
+  width: 15%;
+
+  & img {
+    position: absolute;
+    top: 30px;
+    right: 27px;
+  }
+
+  &:hover {
+    & img {
+      content: url('images/iconmonstr-favorite-3.svg');
+    }
+  }
+`;
+
+export const Info = styled.div`
+  position: relative;
+  width: 85%;
+  padding: 0 0 0 26px;
+  box-sizing: border-box;
+
+  & img {
+    position: absolute;
+    top: 13px;
+    left: 25px;
+  }
+
+  // &:hover {
+  //   opacity: 0.6;
+  //   transition: 0.5s;
+
+  //   ${Like} {
+  //     display: none;
+  //     opacity: 0.6;
+  //     transition: 0.5s;
+  //   }
+  }
 `;
 
 export const Item = styled.div`
@@ -18,38 +58,13 @@ export const Item = styled.div`
   border: 1px solid black;
   border-radius: 6px;
   height: 90px;
-  max-width: 550px;
-  width: 100%;
-  background: linear-gradient(90deg, white 482px, rgba(96, 96, 96, 0.06) 0);
-
-  padding: 0 0 0 26px;
+  width: 550px;
+  display: flex;
   border-radius: 6px;
   border: solid 1px #979797;
   background-color: #fff;
-
-  position: relative;
   cursor: pointer;
   transition: 0.5s;
-
-  & img {
-    position: absolute;
-
-    &:first-of-type {
-      top: 13px;
-      left: 25px;
-    }
-
-    &:last-of-type {
-      top: 33px;
-      right: 20px;
-
-      &:hover {
-        & svg {
-          display: none;
-        }
-      }
-    }
-  }
 
   &:hover {
     opacity: 0.6;

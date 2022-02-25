@@ -53,11 +53,16 @@ const NewsContainer: FC = () => {
     <News>
       {news.map((item, index) => (
         (item.story_url && item.created_at && item.story_title && item.author) ? (
-          <News.Item key={index} onClick={() => window.open(item.story_url)}>
-          <img src="images/iconmonstr-time-2.svg" alt="time" />
-          <News.Item.SubTitle>{`${item.created_at} by ${item.author}`}</News.Item.SubTitle>
-          <News.Item.Title>{item.story_title}</News.Item.Title>
-          <img src="images/iconmonstr-favorite-2.svg" alt="heart" />
+          <News.Item key={index}>
+            <News.Item.Info onClick={() => window.open(item.story_url)}>
+              <img src="images/iconmonstr-time-2.svg" alt="time" />
+              <News.Item.Info.SubTitle>{`${item.created_at} by ${item.author}`}</News.Item.Info.SubTitle>
+              <News.Item.Info.Title>{item.story_title}</News.Item.Info.Title>
+            </News.Item.Info>
+
+            <News.Item.Like>
+              <img src="images/iconmonstr-favorite-2.svg" alt="heart" />
+            </News.Item.Like>
           </News.Item>
         ) : null
       ))}
