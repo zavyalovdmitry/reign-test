@@ -17,8 +17,8 @@ export const Button = styled.p`
   background-color: #fff;
   cursor: pointer;
 
-  width: 8px;
-  height: 22px;
+  // width: 8px;
+  // height: 22px;
   font-family: Roboto-Regular;
   font-size: 14px;
   font-weight: normal;
