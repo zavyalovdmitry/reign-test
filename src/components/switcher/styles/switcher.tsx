@@ -14,11 +14,9 @@ export const Container = styled.div`
 
 export const Button = styled.p`
   box-sizing: border-box;
-
   width: 98px;
   height: 31px;
   border: solid 1px #d6d6d6;
-
   font-family: Roboto-Medium;
   font-size: 16px;
   font-weight: 500;

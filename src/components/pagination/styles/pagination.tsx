@@ -11,6 +11,10 @@ export const Container = styled.div`
   @media (max-width: 1140px) {
     width: 100%;
   }
+
+  @media (max-width: 570px) {
+    width: 100%;
+  }
 `;
 
 export const Button = styled.p`
@@ -20,7 +24,6 @@ export const Button = styled.p`
   border: solid 1px #d9d9d9;
   background-color: #fff;
   cursor: pointer;
-
   font-family: Roboto-Regular;
   font-size: 14px;
   font-weight: normal;
@@ -49,5 +52,17 @@ export const Button = styled.p`
   &:hover {
     opacity: 0.6;
     transition: 0.5s;
+  }
+
+  @media (max-width: 570px) {
+    display: none;
+
+    &:first-of-type {
+      display: block;
+    }
+
+    &:last-of-type {
+      display: block;
+    }
   }
 `;

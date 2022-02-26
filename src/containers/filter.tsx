@@ -9,23 +9,15 @@ import Select from 'react-select';
 import { Filter } from '../components';
 import { Context } from '../context';
 import { SELECT_OPTIONS, SELECT_STYLES } from '../constants';
-// import { PAGES } from '../constants';
-
-const data = ['Angular', 'Reactjs', 'Vuejs'];
 
 const FilterContainer: FC = () => {
   const context = useContext(Context);
   const [filterValue, setFilterValue] = useState<undefined | string>(undefined);
 
-  // const clickHandler = (e: React.FormEvent<HTMLSelectElement>) => {
   const clickHandler = (e: string) => {
-    // if (e !== null && e.currentTarget instanceof HTMLElement) {
     if (e !== null) {
-      // const { value } = e!;
-
       context?.setContext({ ...context, filter: e, page: '1' });
       setFilterValue(e);
-
       localStorage.setItem('filter', e);
     }
   };

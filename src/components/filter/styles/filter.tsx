@@ -12,7 +12,6 @@ export const Container = styled.div`
       border-radius: 4px;
       border: solid 1px #2e2e2e;
       background-color: #fff;
-
       font-family: Roboto-Regular;
       font-size: 14px;
       font-weight: normal;
@@ -36,6 +35,11 @@ export const Container = styled.div`
   @media (max-width: 1140px) {
     width: 550px;
   }
+
+  @media (max-width: 570px) {
+    width: 100%;
+    padding-left: 10px;
+  }
 `;
 
 export const Select = styled.select`
@@ -43,13 +47,11 @@ export const Select = styled.select`
   opacity: 0.85;
   padding: 5px 12px 5px 12px;
   cursor: pointer;
-
   width: 240px;
   height: 32px;
   border-radius: 4px;
   border: solid 1px #2e2e2e;
   background-color: #fff;
-
   font-family: Roboto-Regular;
   font-size: 14px;
   font-weight: normal;
@@ -58,12 +60,4 @@ export const Select = styled.select`
   line-height: 1.57;
   letter-spacing: normal;
   color: #343434;
-
-  // & option {
-  //   position: relative;
-  // }
-
-  // & img {
-  //   position: absolute;
-  // }
 `;

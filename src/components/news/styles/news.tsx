@@ -16,6 +16,10 @@ export const Container = styled.div`
     align-items: center;
     width: 100%;
   }
+
+  @media (max-width: 570px) {
+    padding: 0 10px;
+  }
 `;
 
 export const Like = styled.div`
@@ -35,6 +39,10 @@ export const Like = styled.div`
       transform: scale(1.5);
       transition: 0.2s;
     }
+  }
+
+  @media (max-width: 570px) {
+    width: 66px;
   }
 `;
 
@@ -67,6 +75,10 @@ export const Item = styled.div`
   &:hover {
     opacity: 0.6;
     transition: 0.5s;
+  }
+
+  @media (max-width: 570px) {
+    width: 100%;
   }
 `;
 
