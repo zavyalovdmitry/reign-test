@@ -28,11 +28,19 @@ export const Button = styled.p`
   color: #606060;
   padding-top: 2px;
   cursor: pointer;
+  transition: 0.2s;
 
   &.active {
     border: solid 1px #1797ff;
     cursor: default;
     color: #1797ff;
+  }
+
+  &:hover {
+    border: solid 1px #1797ff;
+    // cursor: default;
+    color: #1797ff;
+    transition: 0.5s;
   }
 
   &:first-of-type {

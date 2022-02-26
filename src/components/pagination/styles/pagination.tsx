@@ -43,6 +43,7 @@ export const Button = styled.p`
     background-color: #1890ff;
     cursor: default;
     color: #fff;
+    border: solid 1px #1890ff;
 
     &:hover {
       opacity: 1;
@@ -50,8 +51,8 @@ export const Button = styled.p`
   }
 
   &:hover {
-    opacity: 0.6;
     transition: 0.5s;
+    border: solid 1px #1890ff;
   }
 
   @media (max-width: 570px) {
