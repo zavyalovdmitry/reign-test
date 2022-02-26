@@ -14,7 +14,6 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-
     width: 100%;
   }
 `;
@@ -22,12 +21,12 @@ export const Container = styled.div`
 export const Like = styled.div`
   background-color: rgba(96, 96, 96, 0.06);
   position: relative;
-  width: 15%;
+  width: 12%;
 
   & img {
     position: absolute;
-    top: 30px;
-    right: 27px;
+    top: 34px;
+    right: 21px;
     transition: 0.5s;
   }
 
@@ -41,7 +40,7 @@ export const Like = styled.div`
 
 export const Info = styled.div`
   position: relative;
-  width: 85%;
+  width: 88%;
   padding: 0 0 0 26px;
   box-sizing: border-box;
 

@@ -1,8 +1,8 @@
 import styled from 'styled-components/macro';
 
 export const Container = styled.div`
-  margin-top: 96px;
-  margin-bottom: 96px;
+  margin-top: 50px;
+  margin-bottom: 50px;
   width: 1140px;
   box-sizing: border-box;
   display: flex;
@@ -14,7 +14,7 @@ export const Container = styled.div`
 `;
 
 export const Button = styled.p`
-  margin-left: 8px;
+  margin-left: 6px;
   padding: 6px 12px 4px;
   border-radius: 6px;
   border: solid 1px #d9d9d9;

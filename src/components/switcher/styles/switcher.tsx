@@ -5,7 +5,7 @@ export const Container = styled.div`
   box-sizing: border-box;
   display: flex;
   justify-content: center;
-  margin-top: 70px;
+  margin-top: 54px;
 
   @media (max-width: 1140px) {
     width: 100%;
