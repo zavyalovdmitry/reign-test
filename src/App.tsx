@@ -1,15 +1,15 @@
-/* eslint-disable @typescript-eslint/no-empty-function */
 /* eslint-disable react/jsx-no-constructed-context-values */
-/* eslint-disable react/function-component-definition */
 import React, { FC, useState } from 'react';
 import Home from './pages/home';
 import { IContext, Context } from './context';
+import { PAGES } from './constants';
 
 const App: FC = () => {
   const initialContext: IContext = {
     switch: 'All',
     filter: '',
     page: '1',
+    pagesInit: [...PAGES],
     setContext: (): void => {
       throw new Error('error');
     },

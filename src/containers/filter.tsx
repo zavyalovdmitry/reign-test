@@ -1,46 +1,52 @@
-/* eslint-disable react/no-unstable-nested-components */
-/* eslint-disable react/no-unknown-property */
-/* eslint-disable prettier/prettier */
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
-/* eslint-disable no-unused-expressions */
-/* eslint-disable react/function-component-definition */
 import React, { FC, useContext, useEffect, useState } from 'react';
 import Select from 'react-select';
 import { Filter } from '../components';
 import { Context } from '../context';
-import { SELECT_OPTIONS, SELECT_STYLES } from '../constants';
+import { SELECT_OPTIONS, SELECT_STYLES, PAGES } from '../constants';
 
 const FilterContainer: FC = () => {
   const context = useContext(Context);
-  const [filterValue, setFilterValue] = useState<undefined | string>(undefined);
+  const [filterValue, setFilterValue] = useState<undefined | string | null>(
+    undefined
+  );
 
   const clickHandler = (e: string) => {
-    if (e !== null) {
-      context?.setContext({ ...context, filter: e, page: '1' });
+    if (e !== null && context) {
+      context.setContext({
+        ...context,
+        filter: e,
+        page: '1',
+        pagesInit: [...PAGES],
+      });
+
       setFilterValue(e);
       localStorage.setItem('filter', e);
     }
   };
 
   useEffect(() => {
-    !localStorage.getItem('filter') ? (
-        setFilterValue(context?.filter),
-        localStorage.setItem('filter', '')
-    ) : (
-        setFilterValue(localStorage.getItem('filter')!),
-        context?.setContext({
-          ...context, filter: localStorage.getItem('filter')!
-        })
-    );
+    if (context) {
+      if (localStorage.getItem('filter')) {
+        setFilterValue(localStorage.getItem('filter')!);
+        context.setContext({
+          ...context,
+          filter: localStorage.getItem('filter'),
+        });
+      } else {
+        setFilterValue(context.filter);
+        localStorage.setItem('filter', '');
+      }
+    }
   }, []);
 
-  return filterValue !== undefined ? (
+  return filterValue !== undefined && context && context.switch === 'All' ? (
     <Filter>
       <Select
         styles={SELECT_STYLES}
         placeholder={filterValue || 'Select your news'}
-        onChange={(e: any) => clickHandler(e.value)!}
+        onChange={(e: any) => clickHandler(e.value)}
         options={SELECT_OPTIONS as unknown as readonly string[]}
+        isSearchable={false}
       />
     </Filter>
   ) : null;

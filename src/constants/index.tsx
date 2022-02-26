@@ -34,21 +34,24 @@ export const SELECT_OPTIONS = [
 ];
 
 export const SELECT_STYLES = {
-  container: (provided: any, state: any) => ({
+  container: (provided: any) => ({
     ...provided,
     width: '240px',
     height: '32px',
   }),
-  control: (provided: any, state: any) => ({
+
+  control: (provided: any) => ({
     ...provided,
     height: '32px',
     border: 'solid 1px #2e2e2e',
   }),
-  indicatorsContainer: (provided: any, state: any) => ({
+
+  indicatorsContainer: (provided: any) => ({
     ...provided,
     height: '32px',
   }),
-  option: (provided: any, state: any) => ({
+
+  option: (provided: any) => ({
     ...provided,
     fontFamily: 'Roboto-Regular',
     fontSize: '14px',
@@ -59,7 +62,8 @@ export const SELECT_STYLES = {
     letterSpacing: 'normal',
     color: '#343434',
   }),
-  placeholder: (provided: any, state: any) => ({
+
+  placeholder: (provided: any) => ({
     ...provided,
     fontFamily: 'Roboto-Regular',
     fontSize: '14px',

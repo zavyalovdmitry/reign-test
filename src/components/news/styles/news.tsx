@@ -10,6 +10,10 @@ export const Container = styled.div`
   grid-column-gap: 40px;
   margin-top: 38px;
 
+  &.nofilter {
+    margin-top: 117px;
+  }
+
   @media (max-width: 1140px) {
     display: flex;
     flex-direction: column;

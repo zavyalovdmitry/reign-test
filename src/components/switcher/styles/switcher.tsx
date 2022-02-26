@@ -38,7 +38,6 @@ export const Button = styled.p`
 
   &:hover {
     border: solid 1px #1797ff;
-    // cursor: default;
     color: #1797ff;
     transition: 0.5s;
   }
