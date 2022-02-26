@@ -49,7 +49,7 @@ const PaginationContainer: FC = () => {
       ) {
         arr.splice(0, 1);
 
-        if (+value === MAX_PAGES) {
+        if (+value === MAX_PAGES + 1) {
           arr.push('1');
         } else {
           arr.push(

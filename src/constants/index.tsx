@@ -2,6 +2,7 @@ export const PAGES = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
 export const MAX_PAGES = 49;
 
 export const NO_LIKES_MESSAGE = 'No likes on this page :(';
+export const NO_DATA_MESSAGE = 'No data on this page :(';
 
 export const SELECT_OPTIONS = [
   {

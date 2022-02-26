@@ -3,13 +3,13 @@ import React, { FC, useContext, useEffect, useState } from 'react';
 import { News } from '../components';
 import { Context } from '../context';
 import { API } from '../lib';
-import { NO_LIKES_MESSAGE } from '../constants';
+import { NO_DATA_MESSAGE, NO_LIKES_MESSAGE } from '../constants';
 
 const NewsContainer: FC = () => {
   const context = useContext(Context);
   const [news, setNews] = useState<any[]>([]);
   const [likes, setLikes] = useState<string[]>([]);
-  const [message, setMessage] = useState(NO_LIKES_MESSAGE);
+  const [message, setMessage] = useState([NO_LIKES_MESSAGE, NO_DATA_MESSAGE]);
 
   const fetchNews = () => {
     if (context) {
@@ -36,11 +36,11 @@ const NewsContainer: FC = () => {
   useEffect(() => {
     setNews([]);
     fetchNews();
-    setMessage(NO_LIKES_MESSAGE); 
+    setMessage([NO_LIKES_MESSAGE, NO_DATA_MESSAGE]); 
   }, [context?.filter, context?.page]);
 
   useEffect(() => {
-    setMessage(NO_LIKES_MESSAGE);
+    setMessage([NO_LIKES_MESSAGE, NO_DATA_MESSAGE]);
   }, [context?.switch]);
 
   const setLikesHandler = (objectID: string) => {
@@ -52,7 +52,7 @@ const NewsContainer: FC = () => {
       arr.splice(likes.indexOf(objectID), 1);
       setLikes(arr);
       localStorage.setItem('likes', JSON.stringify(arr));
-      setMessage(NO_LIKES_MESSAGE);
+      setMessage([NO_LIKES_MESSAGE, NO_DATA_MESSAGE]);
     }
   };
 
@@ -96,7 +96,7 @@ const NewsContainer: FC = () => {
           ((context.switch === 'My faves' &&
             likes.indexOf(item.objectID) >= 0) ||
             context.switch === 'All') ? (
-            message.length > 0 ? setMessage('') : null,
+            message[0].length > 0 ? setMessage(['', '']) : null,
             <News.Item key={index}>
               <News.Item.Info onClick={() => window.open(item.story_url)}>
                 <img src="images/iconmonstr-time-2.svg" alt="time" />
@@ -120,7 +120,7 @@ const NewsContainer: FC = () => {
           ) : null
         )}
       </News>
-      {context.switch === 'My faves' ? <p>{message}</p> : null}
+      <p>{context.switch === 'My faves' ? message[0] : message[1]}</p>
     </>
   ) : (
     <p>loading...</p>
