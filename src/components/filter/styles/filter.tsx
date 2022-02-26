@@ -4,6 +4,12 @@ export const Container = styled.div`
   width: 1140px;
   box-sizing: border-box;
   margin-top: 63px;
+
+  @media (max-width: 1140px) {
+    width: 550px;
+    // display: flex;
+    // justify-content: center;
+  }
 `;
 
 export const Select = styled.select`
@@ -27,7 +33,11 @@ export const Select = styled.select`
   letter-spacing: normal;
   color: #343434;
 
-  &img {
+  & option {
+    position: relative;
+  }
+
+  & img {
     position: absolute;
   }
 `;

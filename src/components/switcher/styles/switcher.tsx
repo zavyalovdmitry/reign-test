@@ -6,6 +6,10 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 70px;
+
+  @media (max-width: 1140px) {
+    width: 100%;
+  }
 `;
 
 export const Button = styled.p`

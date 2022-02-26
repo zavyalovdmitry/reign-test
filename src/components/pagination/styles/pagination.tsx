@@ -7,6 +7,10 @@ export const Container = styled.div`
   box-sizing: border-box;
   display: flex;
   justify-content: center;
+
+  @media (max-width: 1140px) {
+    width: 100%;
+  }
 `;
 
 export const Button = styled.p`
@@ -17,8 +21,6 @@ export const Button = styled.p`
   background-color: #fff;
   cursor: pointer;
 
-  // width: 8px;
-  // height: 22px;
   font-family: Roboto-Regular;
   font-size: 14px;
   font-weight: normal;

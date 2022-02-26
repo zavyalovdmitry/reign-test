@@ -1,10 +1,14 @@
+/* eslint-disable react/no-unstable-nested-components */
+/* eslint-disable react/no-unknown-property */
 /* eslint-disable prettier/prettier */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable no-unused-expressions */
 /* eslint-disable react/function-component-definition */
 import React, { FC, useContext, useEffect, useState } from 'react';
+// import Select from 'react-select';
 import { Filter } from '../components';
 import { Context } from '../context';
+// import { PAGES } from '../constants';
 
 const data = ['Angular', 'Reactjs', 'Vuejs'];
 
@@ -16,7 +20,7 @@ const FilterContainer: FC = () => {
     if (e !== null && e.currentTarget instanceof HTMLElement) {
       const { value } = e.currentTarget;
 
-      context?.setContext({ ...context, filter: value });
+      context?.setContext({ ...context, filter: value, page: '1' });
       setFilterValue(value);
 
       localStorage.setItem('filter', value);
@@ -35,7 +39,7 @@ const FilterContainer: FC = () => {
     );
   }, []);
 
-  return filterValue !== undefined? (
+  return filterValue !== undefined ? (
     <Filter>
       <Filter.Select
         id="news"
@@ -47,6 +51,7 @@ const FilterContainer: FC = () => {
         </option>
         {data.map((item, index) => (
           <option key={index} value={item}>
+            {/* <img src={`/images/image-${index + 1}.png`} alt={`icon-${index}`} />  */}
             {item}
           </option>
         ))}

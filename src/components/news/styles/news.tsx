@@ -9,6 +9,14 @@ export const Container = styled.div`
   grid-row-gap: 30px;
   grid-column-gap: 40px;
   margin-top: 38px;
+
+  @media (max-width: 1140px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+  }
 `;
 
 export const Like = styled.div`
@@ -20,11 +28,13 @@ export const Like = styled.div`
     position: absolute;
     top: 30px;
     right: 27px;
+    transition: 0.5s;
   }
 
   &:hover {
     & img {
-      content: url('images/iconmonstr-favorite-3.svg');
+      transform: scale(1.5);
+      transition: 0.2s;
     }
   }
 `;
@@ -39,17 +49,6 @@ export const Info = styled.div`
     position: absolute;
     top: 13px;
     left: 25px;
-  }
-
-  // &:hover {
-  //   opacity: 0.6;
-  //   transition: 0.5s;
-
-  //   ${Like} {
-  //     display: none;
-  //     opacity: 0.6;
-  //     transition: 0.5s;
-  //   }
   }
 `;
 

@@ -27,7 +27,6 @@ interface INewsItem extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 interface INews extends React.HTMLAttributes<HTMLDivElement> {
-  // Select?: INewsItem;
   children: React.ReactNode;
 }
 
